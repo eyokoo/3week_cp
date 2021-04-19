@@ -1,0 +1,63 @@
+to create a TABLE
+
+CREATE TABLE users (
+  _id number,
+  name varchar,
+  occupation varchar,
+  is_active boolean
+
+);
+
+-- you can comment your sql script using --
+
+-- in sql a javascript string is equivalent 
+-- to a sql VARCHAR (varrying characters)
+
+-- in sql we use single quotes for strings/varchars, not double quotes
+
+
+-- to add a record 
+INSERT INTO users VALUES(1, 'Mike', 'Developer', 1);
+
+-- to fetch all the records and all the columns
+SELECT * FROM users;
+
+-- to fetch some of the columns you can specify them in the select clause
+SELECT name, occupation FROM users;
+
+-- to fetch some of the rows but not all
+-- add a where clause to limit the DataCue
+
+-- this will return all active users
+SELECT * FROM users where is_active = 1;
+
+-- this will return all users with id 2
+SELECT * FROM users where _id = 2;
+
+--you can combine limiting rows and columns in the query
+-- fetch the names of the active users
+SELECT name FROM users WHERE is_active = 1;
+
+
+-- to delete a users
+DELETE FROM users WHERE _id = 1;
+
+-- to delete all not active users
+DELETE FROM users WHERE is_active =0;
+
+
+-- WHERE clause is used to limit records/rows
+-- where clause can match on multiple criteria
+ 
+-- fetch users that are active and are developers
+SELECT * FROM users
+WHERE is_active =1 AND occupation = 'Developer'
+
+
+-- fetch usrs that are bakers and have an id > 20
+SELECT * FROM users
+WHERE occupation = 'Baker' AND _id > 20;
+
+-- fetch users that are either bakers or (developer with id >20)
+SELECT * FROM users
+WHERE occupation = 'Baker' OR (occupation = 'Developer' AND _id >20)

@@ -1,0 +1,8 @@
+in index.js import your router module 
+
+in router module you need to make sure you set up the path (the verb and the path) to the right controller methodd
+in the router you have to make sure you import the correct controller
+in the router you have to export the router variable(file)
+
+in the controller you have to import the sql connection
+in the controller you have to make the methods that the router is expecting in line4 exists in your controller..and then export those
