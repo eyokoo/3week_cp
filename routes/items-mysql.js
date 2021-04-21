@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router(); //getting the router from express
-const controller = require("./items-mysql"); //whatever is being exported from the controller file path is being put into the variable controller
-//ANYTHING MISSING HERE?
+const controller = require("../controller/items-mysql.js"); //whatever is being exported from the controller file path is being put into the variable controller
+
 
 router.get("/items-mysql", controller.list); // GET returns the list of items in my database
 
