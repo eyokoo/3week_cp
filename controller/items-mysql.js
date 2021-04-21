@@ -78,10 +78,10 @@ let remove = (req, res) => {
   
       connection.query(sql, params, (error) => {
         if (error) {
-          console.error("Failed to insert new item in the database", error);
+          console.error("Failed to delete item in the database", error);
           res.sendStatus(500);
         } else {
-          res.send("Success - You delete an item!");
+          res.send("Success - You deleted an item!");
         }
       })
 }
