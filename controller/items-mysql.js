@@ -1,7 +1,7 @@
 const connection = require("../sql/connection-mysql");
 
 let list = (req, res) => {
-  console.log("Inside the list function");
+  console.log("Inside the list function",req.params);
   connection.query("SELECT * FROM inventory", (error, rows) => {
     if (error) {
       console.log("Failed to list items", error);
@@ -14,7 +14,7 @@ let list = (req, res) => {
 
 //GET/:id  list the items by id
 let get = (req, res) => {
-  console.log("Inside the get function", req.params);
+  console.log("Inside the get function", req.params.id);
   let id = req.params.id
   let sql = "SELECT id, name FROM inventory WHERE id =?" //sql command to send to the database
   let params = [id];
